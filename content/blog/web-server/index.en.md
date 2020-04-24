@@ -5,3 +5,7 @@ description: ''
 ---
 
 What is a web server?
+
+```js
+console.log('test')
+```

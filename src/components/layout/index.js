@@ -1,4 +1,5 @@
 import React from 'react'
+import { useIntl, changeLocale } from 'gatsby-plugin-intl'
 import {
   Wrapper,
   MainWrapper,
@@ -10,13 +11,17 @@ import {
 } from './styles'
 
 const Layout = ({ location, title, children }) => {
-  const blogPath = `${__PATH_PREFIX__}/`
+  const intl = useIntl()
+  const homePaths = [
+    `${__PATH_PREFIX__}/${intl.locale}`,
+    `${__PATH_PREFIX__}/${intl.locale}/`,
+  ]
 
   return (
     <Wrapper>
       <MainWrapper>
         <header>
-          {location.pathname === blogPath ? (
+          {homePaths.includes(location.pathname) ? (
             <MainTitle>
               <MainTitleLink to="/">{title}</MainTitleLink>
             </MainTitle>
@@ -25,6 +30,12 @@ const Layout = ({ location, title, children }) => {
               <BlogTitleLink to="/">{title}</BlogTitleLink>
             </BlogTitle>
           )}
+          <button onClick={() => changeLocale('de')}>
+            {intl.formatMessage({ id: 'German' })}
+          </button>
+          <button onClick={() => changeLocale('en')}>
+            {intl.formatMessage({ id: 'English' })}
+          </button>
         </header>
         <main>{children}</main>
       </MainWrapper>

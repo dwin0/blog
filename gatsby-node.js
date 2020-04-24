@@ -1,6 +1,38 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
+const removeMarkdownFileEnding = path => path.replace(/index.(en|de)\/$/, '')
+const getLanguageFromPath = path => {
+  const lang = path.match(/\.(de|en)\/$/)
+  return lang ? lang[1] : ''
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `Mdx`) {
+    const value = createFilePath({ node, getNode })
+
+    createNodeField({
+      name: `slug`, // used to query blog details on blog-post.js (unique)
+      node,
+      value,
+    })
+
+    createNodeField({
+      name: `blogPath`, // used to link to other blogs (not unique)
+      node,
+      value: removeMarkdownFileEnding(value),
+    })
+
+    createNodeField({
+      name: `language`, // used to filter articles on homepage
+      node,
+      value: getLanguageFromPath(value),
+    })
+  }
+}
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
@@ -16,6 +48,8 @@ exports.createPages = ({ graphql, actions }) => {
             node {
               fields {
                 slug
+                blogPath
+                language
               }
               frontmatter {
                 title
@@ -30,37 +64,73 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create blog posts pages.
     const posts = result.data.allMdx.edges
 
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+    // needed to correctly link to next and previous
+    const postsByLang = posts.reduce((acc, post) => {
+      const postLang = post.node.fields.language
 
-      createPage({
-        path: `blog${post.node.fields.slug}`,
-        component: blogPost,
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
+      if (acc[postLang]) {
+        return {
+          ...acc,
+          [postLang]: [...acc[postLang], post],
+        }
+      }
+
+      return {
+        ...acc,
+        [postLang]: [post],
+      }
+    }, {})
+
+    Object.values(postsByLang).forEach(postsArray =>
+      postsArray.forEach((post, index) => {
+        const previous =
+          index === postsArray.length - 1 ? null : postsArray[index + 1].node
+        const next = index === 0 ? null : postsArray[index - 1].node
+
+        createPage({
+          path: `blog${post.node.fields.slug}`,
+          component: blogPost,
+          context: {
+            slug: post.node.fields.slug,
+            previous,
+            next,
+          },
+        })
       })
-    })
+    )
 
     return null
   })
 }
 
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+exports.onCreatePage = async ({
+  page,
+  actions: { createPage, deletePage },
+}) => {
+  // no dynamic (blog) page
+  if (page.isCreatedByStatefulCreatePages) {
+    return
+  }
 
-  if (node.internal.type === `Mdx`) {
-    const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
+  // blog pages (e.g. web-server/index.en.md)
+  const intlAndFileLang = page.path.match(/\/(en|de).*\.(en|de)\//)
+
+  if (!intlAndFileLang) {
+    deletePage(page)
+    return
+  }
+
+  const [_, intlLang, fileLang] = intlAndFileLang
+
+  if (intlLang === fileLang) {
+    createPage({
+      ...page,
+      path: removeMarkdownFileEnding(page.path),
     })
+    deletePage(page)
+  } else {
+    deletePage(page)
   }
 }
