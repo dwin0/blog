@@ -9,7 +9,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-feed-mdx`,
     {
@@ -77,14 +76,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-intl`,
       options: {
-        // language JSON resource path
         path: `${__dirname}/src/intl`,
-        // supported language
         languages: [`en`, `de`],
-        // language file path
         defaultLanguage: `en`,
-        // option to redirect to `/en` when connecting `/`
-        redirect: true,
+        redirect: true, // option to redirect to `/en` when connecting `/`
       },
     },
   ],
