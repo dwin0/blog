@@ -5,6 +5,7 @@ import { useIntl, Link } from 'gatsby-plugin-intl'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { BlogEntry, PublishDate, BlogTitle } from '../pages-styles'
+import { About } from '../components/about'
 
 const Blog = ({
   data: {
@@ -20,6 +21,7 @@ const Blog = ({
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title={intl.formatMessage({ id: 'allPosts' })} />
+      <About />
       <div>
         {posts.map(
           ({

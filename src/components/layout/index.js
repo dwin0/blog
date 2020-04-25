@@ -8,19 +8,39 @@ import {
   MainTitleLink,
   BlogTitle,
   BlogTitleLink,
+  LangWrapper,
+  LangButton,
 } from './styles'
 
 const Layout = ({ location, title, children }) => {
-  const intl = useIntl()
+  const { locale: currentLanguage } = useIntl()
   const homePaths = [
-    `${__PATH_PREFIX__}/${intl.locale}`,
-    `${__PATH_PREFIX__}/${intl.locale}/`,
+    `${__PATH_PREFIX__}/${currentLanguage}`,
+    `${__PATH_PREFIX__}/${currentLanguage}/`,
   ]
 
   return (
     <Wrapper>
       <MainWrapper>
         <header>
+          <LangWrapper>
+            <LangButton
+              tabIndex="0"
+              role="button"
+              onClick={() => changeLocale('de')}
+              isActive={currentLanguage === 'de'}
+            >
+              Deutsch
+            </LangButton>
+            <LangButton
+              tabIndex="0"
+              role="button"
+              onClick={() => changeLocale('en')}
+              isActive={currentLanguage === 'en'}
+            >
+              English
+            </LangButton>
+          </LangWrapper>
           {homePaths.includes(location.pathname) ? (
             <MainTitle>
               <MainTitleLink to="/">{title}</MainTitleLink>
@@ -30,12 +50,6 @@ const Layout = ({ location, title, children }) => {
               <BlogTitleLink to="/">{title}</BlogTitleLink>
             </BlogTitle>
           )}
-          <button onClick={() => changeLocale('de')}>
-            {intl.formatMessage({ id: 'German' })}
-          </button>
-          <button onClick={() => changeLocale('en')}>
-            {intl.formatMessage({ id: 'English' })}
-          </button>
         </header>
         <main>{children}</main>
       </MainWrapper>
