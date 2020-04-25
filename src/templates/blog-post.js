@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { Link } from 'gatsby-plugin-intl'
+import { DiscussionEmbed } from 'disqus-react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -10,10 +11,10 @@ const BlogPostTemplate = ({
   data: {
     mdx: post,
     site: {
-      siteMetadata: { title: siteTitle },
+      siteMetadata: { title: siteTitle, siteUrl, disqusName },
     },
   },
-  pageContext: { previous, next },
+  pageContext: { previous, next, slug },
   location,
 }) => (
   <Layout location={location} title={siteTitle}>
@@ -50,6 +51,14 @@ const BlogPostTemplate = ({
         )}
       </li>
     </ul>
+    <DiscussionEmbed
+      shortname={disqusName}
+      config={{
+        url: siteUrl,
+        identifier: slug,
+        title: post.frontmatter.title,
+      }}
+    />
   </Layout>
 )
 
@@ -60,7 +69,8 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author
+        siteUrl
+        disqusName
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {

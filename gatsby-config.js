@@ -4,6 +4,7 @@ module.exports = {
     description: `A blog to explain web development concepts the simple way`,
     author: `David Windler`,
     siteUrl: `https://web-dev-blog.netlify.app/`,
+    disqusName: 'web-development-blog',
   },
   plugins: [
     `gatsby-plugin-styled-components`,

@@ -1,5 +1,5 @@
 ---
-title: Web Server
+title: Webserver
 date: '2020-04-25'
 description: ''
 ---
@@ -27,14 +27,14 @@ app.get('/hello', function (request, response) {
 - `'/'` bzw. `'/hello'` definiert den Pfad in der URL. Bei www.google.com/hello-google ist "/hello-google" der Pfad.
 - Annahme: Der Computer ist unter der Adresse www.web-server.com erreichbar.
 
-Die erste Regel lautet: Wenn im Browser die Adresse www.web-server.com<b>/</b> eingegeben wird, dann antworte mit `'Home'`.<br/>
+Die erste Regel aus dem gezeigten Code lautet: Wenn im Browser die Adresse www.web-server.com<b>/</b> eingegeben wird, dann antworte mit `'Home'`.<br/>
 Die zweite Regel lautet: Wenn im Browser die Adresse www.web-server.com<b>/hello</b> eingegeben wird, dann antworte mit `'How are you?'`.<br/>
 
 Im Browser sieht die Antwort dann so aus:
 
 ![Browserfenster, welches die Wörter 'How are you?' anzeigt](./web-server-hello.jpg)
 
-Diese Antwort sieht allerdings nicht so aus, wie wenn wir eine "normale" Webseite aufrufen. Der unterschied liegt darin, dass eine Webseite aus HTML, CSS, JavaScript und weiteren Teilen besteht. Wie eine einfache Webseite erstellt wird, ist Thema des nächsten Blogbeitrages.<br />
+Diese Antwort sieht allerdings nicht so aus, wie wenn wir eine "normale" Webseite aufrufen. Der Unterschied liegt darin, dass eine Webseite aus HTML, CSS, JavaScript und weiteren Teilen besteht. Wie eine einfache Webseite erstellt wird, ist Thema des nächsten Blogbeitrages.<br />
 Grundsätzlich sind HTML und CSS aber Dateien, welche auf dem gleichen Computer abgespeichert sind, auf welchem der Webserver läuft. Wir können also die Regeln so ändern, dass Anstatt den Wörtern `'Home'` und `'How are you?'`, Dateien an den Browser geschickt werden. Dies sieht dann so aus:
 
 ```js
@@ -54,16 +54,16 @@ app.get('/meritt-thomas.jpg', function (request, response) {
 Die Dateistruktur sieht dabei folgendermassen aus:
 
 ```
-ProjektOrder
-│-- server.js (Webserver Programm)
+ProjektOrdner
+│-- server.js (Webserver Programm mit den oben gezeigten Regeln)
 │-- index.html
 │-- styles.css
 │-- meritt-thomas.jpg
 ```
 
-- `__dirname` ist dabei der Ordnerpfad zu ProjektOrder (zum Beispiel: /Users/me/Documents/ProjektOrdner)
+- `__dirname` ist dabei der Ordnerpfad zu ProjektOrdner (zum Beispiel: /Users/me/Documents/ProjektOrdner)
 
-Die erste Regel lautet: Wenn im Browser die Adresse www.web-server.com<b>/</b> eingegeben wird, dann sende ihm die Datei "index.html". Das HTML wiederum enthält die Information, wie es die CSS Datei und das Bild laden kann. Es fragt in einem zweiten Schritt also nach diesen beiden Dateien.<br />
+Die erste Regel aus server.js lautet: Wenn im Browser die Adresse www.web-server.com<b>/</b> eingegeben wird, dann sende ihm die Datei "index.html". Das HTML wiederum enthält die Information, wie es die CSS Datei und das Bild laden kann. Er fragt in einem zweiten Schritt also nach diesen beiden Dateien.<br />
 Die zweite und dritte Regel beantworten dann die Anfrage nach dem CSS und dem Bild.
 
 Nachdem der Browser alles heruntergeladen hat, sieht die Seite wie folgt aus:
