@@ -78,7 +78,7 @@ Hinweis: Die aufgeführten Regeln sind sehr vereinfacht. Das Vorgehen funktionie
 
 > Wenn ich eine Webseite erstellen will, muss ich immer einen Webserver selber schreiben?
 
-Um eine Webseite verfügbar zu machen, braucht es immer einen Webserver. Dieser muss aber nicht selbst geschrieben werden, da es viele Platformen (sogenannte Webhoster) gibt, welche diese Arbeit übernehmen. Beispiele für Gratis Webhoster:
+Um eine Webseite verfügbar zu machen, braucht es immer einen Webserver. Dieser muss aber nicht selbst geschrieben werden, da es viele Platformen (sogenannte Webhoster) gibt, welche diese Arbeit übernehmen. Beispiele für gratis Webhoster:
 
 - Netlify Drop: https://app.netlify.com/drop
 - Render: https://render.com/
