@@ -22,6 +22,10 @@ Wordpress2016.overrideStyles = () => ({
     padding: '0 1.75rem',
     borderLeft: `2px solid ${BLACK}`,
   },
+  '.grvsc-code': {
+    // highlighted code
+    fontSize: '1rem',
+  },
   'code:not(.grvsc-code)': {
     fontSize: '1.1rem',
     fontWeight: 'bold',
