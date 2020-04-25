@@ -1,6 +1,6 @@
 import Typography from 'typography'
 import Wordpress2016 from 'typography-theme-wordpress-2016'
-import { LIGHT_BLUE } from '../constants/colors'
+import { LIGHT_BLUE, BLACK } from '../constants/colors'
 
 Wordpress2016.overrideStyles = () => ({
   '*': {
@@ -16,6 +16,18 @@ Wordpress2016.overrideStyles = () => ({
   },
   'a:hover': {
     textDecoration: 'underline',
+  },
+  blockquote: {
+    margin: '0 0 1.75rem 0',
+    padding: '0 1.75rem',
+    borderLeft: `2px solid ${BLACK}`,
+  },
+  'code:not(.grvsc-code)': {
+    fontSize: '1.1rem',
+    fontWeight: 'bold',
+  },
+  '.gatsby-resp-image-image': {
+    boxShadow: '0px 0px 5px 0px #0000006b',
   },
 })
 

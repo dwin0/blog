@@ -13,7 +13,7 @@ import {
 } from './styles'
 
 const Layout = ({ location, title, children }) => {
-  const { locale: currentLanguage } = useIntl()
+  const { locale: currentLanguage, formatMessage } = useIntl()
   const homePaths = [
     `${__PATH_PREFIX__}/${currentLanguage}`,
     `${__PATH_PREFIX__}/${currentLanguage}/`,
@@ -54,7 +54,8 @@ const Layout = ({ location, title, children }) => {
         <main>{children}</main>
       </MainWrapper>
       <Footer>
-        © {new Date().getFullYear()}, Built with &nbsp;
+        © {new Date().getFullYear()}, {formatMessage({ id: 'builtWith' })}
+        &nbsp;
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </Footer>
     </Wrapper>
