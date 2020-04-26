@@ -4,7 +4,7 @@ import { useIntl, Link } from 'gatsby-plugin-intl'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { BlogEntry, PublishDate, BlogTitle } from '../pages-styles'
+import { BlogEntry, PublishDate, BlogTitle, BlogPreview } from '../pages-styles'
 import { About } from '../components/about'
 
 const Blog = ({
@@ -30,19 +30,26 @@ const Blog = ({
               fields: { blogPath },
               excerpt,
             },
-          }) => (
-            <BlogEntry key={blogPath}>
-              <BlogTitle>
-                <Link to={`/blog${blogPath}`}>{title}</Link>
-              </BlogTitle>
-              <PublishDate>{date}</PublishDate>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: description || excerpt,
-                }}
-              />
-            </BlogEntry>
-          )
+          }) => {
+            const link = `/blog${blogPath}`
+
+            return (
+              <BlogEntry key={blogPath}>
+                <BlogTitle>
+                  <Link to={link}>{title}</Link>
+                </BlogTitle>
+                <PublishDate>{date}</PublishDate>
+                <BlogPreview
+                  dangerouslySetInnerHTML={{
+                    __html: description || excerpt,
+                  }}
+                />
+                <Link to={link}>
+                  {intl.formatMessage({ id: 'readMore' })}&nbsp;→
+                </Link>
+              </BlogEntry>
+            )
+          }
         )}
       </div>
     </Layout>
