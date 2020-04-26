@@ -10,7 +10,7 @@ In meinen eigenen Worten:
 
 > Ein Webserver ist ein Programm, das auf einem Computer läuft und Anfragen aus dem Internet beantwortet.
 
-Wie jedes Programm, folgt ein Webserver bestimmten Regeln, welche ein Programmierer festgelegt hat. Der folgende Beispielcode zeigt solche Regeln, wie sie mit [express](https://expressjs.com/) geschrieben werden. express hilft dabei, einen Webserver zu erstellen. <br />
+Wie jedes Programm, folgt ein Webserver bestimmten Regeln, welche ein Programmierer festgelegt hat. Der folgende Beispielcode zeigt solche Regeln.<br />
 Es geht nicht darum den Code zu verstehen, sondern eine Idee davon zu bekommen, wie solche Regeln aussehen:
 
 ```js
@@ -72,7 +72,7 @@ Nachdem der Browser alles heruntergeladen hat, sieht die Seite wie folgt aus:
 
 ---
 
-Hinweis: Die aufgeführten Regeln sind sehr vereinfacht. Das Vorgehen funktioniert so nicht, wenn eine Webseite viele CSS Dateien oder Bilder hat. express bietet [bessere Methoden](https://expressjs.com/de/starter/static-files.html) an, um Dateien auszuliefern.
+Hinweis: Die aufgeführten Regeln sind sehr vereinfacht. Das Vorgehen funktioniert so nicht, wenn eine Webseite viele CSS Dateien oder Bilder hat. Es gibt bessere Regeln, um Dateien auszuliefern.
 
 ---
 

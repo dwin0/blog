@@ -10,7 +10,7 @@ In my own words:
 
 > A web server is a program that runs on a computer and answers requests from the Internet.
 
-Like any program, a web server follows certain rules that a programmer has defined. The following sample code shows such rules as they are written with [express](https://expressjs.com/). express helps to create a web server. <br />
+Like any program, a web server follows certain rules that a programmer has defined. The following sample code shows such rules.<br />
 It is not about understanding the code, but about getting an idea of what such rules look like:
 
 ```js
@@ -72,7 +72,7 @@ After the browser has downloaded everything, the page looks like this:
 
 ---
 
-Note: The listed rules are extremly simplified. The procedure does not work if a web page has many CSS files or images. express offers [better methods](http://expressjs.com/en/starter/static-files.html) to deliver files.
+Note: The listed rules are extremly simplified. The procedure does not work if a web page has many CSS files or images. There are better rules for delivering files.
 
 ---
 

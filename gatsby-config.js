@@ -3,7 +3,7 @@ module.exports = {
     title: `Web Development Blog`,
     description: `A blog to explain web development concepts the simple way`,
     author: `David Windler`,
-    siteUrl: `https://web-dev-blog.netlify.app/`,
+    siteUrl: `https://web-developer-blog.io/`,
     disqusName: 'web-development-blog',
   },
   plugins: [
