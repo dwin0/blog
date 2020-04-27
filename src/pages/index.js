@@ -20,7 +20,7 @@ const Blog = ({
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={intl.formatMessage({ id: 'allPosts' })} />
+      <SEO title={intl.formatMessage({ id: 'allPosts' })} lang={intl.locale} />
       <About />
       <div>
         {posts.map(
