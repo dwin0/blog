@@ -10,7 +10,7 @@ Was geschieht, wenn man eine URL im Browser eingibt und dieser anschliessend ein
 
 Zunächst kommunizieren dabei zwei Computer. Der eigene Rechner und der Computer auf dem die Webseite abgespeichert ist. Eine Webseite besteht nämlich aus mehrere Dateien und wird vom Computer auf dem diese gespeichert sind zum Computer der sie anzeigen möchte gesendet.
 
-![Browserfenster, welches eine Webseite mit Titel und Bild anzeigt](./computer-communication.jpg)
+![Ein Computer der einen anderen Computer nach Dateien fragt.](./computer-communication.jpg)
 
 Aus welchen Dateien besteht eine Webseite genau? Die Hauptbestandteile sind [HTML](https://developer.mozilla.org/de/docs/Web/HTML), [CSS](https://developer.mozilla.org/de/docs/Web/CSS) und [JavaScript](https://developer.mozilla.org/de/docs/Web/JavaScript). Daneben gibt es z.B. noch Bilder oder Videos.
 
