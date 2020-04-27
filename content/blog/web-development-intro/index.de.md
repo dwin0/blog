@@ -73,6 +73,6 @@ Bei der Webentwicklung geht es also unter anderem um die Erstellung von HTML, CS
 - JavaScript:
   - Online gratis: <a href="https://www.learn-js.org/" target="_blank">learn-js.org</a>
   - Buch für Beginner: <a href="https://amzn.to/3aGYo6z" target="_blank">JavaScript & jQuery: Interaktive Websites entwickeln</a>
-  - Buch für Fortgeschrittene: <a href="https://amzn.to/3eT0u6J" target="_blank">Professionell entwickeln mit JavaScript: Design, Patterns und Praxistipps für Enterprise-fähigen Code</a>
+  - Buch für Fortgeschrittene: <a href="https://amzn.to/3aDb9z6" target="_blank">Professionell entwickeln mit JavaScript: Design, Patterns und Praxistipps für Enterprise-fähigen Code</a>
 
 Dieser Blog wiederholt diese Sprachkurse nicht, sondern fokussiert sich auf die Konzepte und Begriffe der Webentwicklung sowie auf das Zusammenspiel der Technologien. Es wird, wie in diesem Beitrag, das grosse Bild gezeigt, dann aber auch auf die einzelnen Aspekte eingegangen. Mein Ziel ist es, dem Leser ein starkes Verständnis für die Webentwicklung zu geben.
