@@ -4,7 +4,7 @@ date: '2020-04-23'
 description: ''
 ---
 
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from 'gatsby'
 
 Was geschieht, wenn man eine URL im Browser eingibt und dieser anschliessend eine Webseite anzeigt?
 
@@ -61,7 +61,7 @@ Aus welchen Dateien besteht eine Webseite genau? Die Hauptbestandteile sind [HTM
 
 Der Unterschied zwischen HTML und CSS im Gegensatz zu JavaScript liegt darin, dass in den ersten beiden **beschrieben** wird, was man möchte, bei JavaScript hingegen programmiert man das Verhalten. (WAS möchte ich? vs. WIE soll etwas geschehen?)
 
-Wie weiss der Computer auf dem die Webseite gespeichert ist, dass er die Dateien an den anfragenden Computer senden soll? Diese Aufgabe übernimmt der Webserver. Mehr Informationen dazu gibt es im <Link to="/blog/webserver/">nächsten Blogpost</Link>.
+Wie weiss der Computer auf dem die Webseite gespeichert ist, dass er die Dateien an den anfragenden Computer senden soll? Diese Aufgabe übernimmt der Webserver. Mehr Informationen dazu gibt es im <Link to="/de/blog/webserver/">nächsten Blogpost</Link>.
 
 Nachdem alle Dateien übertragen wurden, liest der Browser diese und berechnet daraus, wie die Webseite aussieht. Anschliessend stellt er die Seite dar.
 
