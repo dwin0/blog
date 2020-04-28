@@ -1,11 +1,16 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
+import Image from 'gatsby-image'
 import { useIntl, changeLocale } from 'gatsby-plugin-intl'
 import {
   Wrapper,
   MainWrapper,
   Footer,
+  MainTitleWrapper,
   MainTitle,
+  MainTitleImageWrapper,
   MainTitleLink,
+  BlogTitleImageWrapper,
   BlogTitle,
   BlogTitleLink,
   LangWrapper,
@@ -19,6 +24,20 @@ const Layout = ({ location, children }) => {
     `${__PATH_PREFIX__}/${currentLanguage}`,
     `${__PATH_PREFIX__}/${currentLanguage}/`,
   ]
+
+  const { file } = useStaticQuery(
+    graphql`
+      query {
+        file(relativePath: { eq: "images/globe-icon.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 200, srcSetBreakpoints: [120, 200, 240, 400]) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+      }
+    `
+  )
 
   return (
     <Wrapper>
@@ -43,12 +62,22 @@ const Layout = ({ location, children }) => {
             </LangButton>
           </LangWrapper>
           {homePaths.includes(location.pathname) ? (
-            <MainTitle>
-              <MainTitleLink to="/">{blogTitle}</MainTitleLink>
-            </MainTitle>
+            <MainTitleWrapper>
+              <MainTitleImageWrapper>
+                <Image fluid={file.childImageSharp.fluid} />
+              </MainTitleImageWrapper>
+              <MainTitle>
+                <MainTitleLink to="/">{blogTitle}</MainTitleLink>
+              </MainTitle>
+            </MainTitleWrapper>
           ) : (
             <BlogTitle>
-              <BlogTitleLink to="/">{blogTitle}</BlogTitleLink>
+              <BlogTitleLink to="/">
+                <BlogTitleImageWrapper>
+                  <Image fluid={file.childImageSharp.fluid} />
+                </BlogTitleImageWrapper>
+                <span>{blogTitle}</span>
+              </BlogTitleLink>
             </BlogTitle>
           )}
         </header>

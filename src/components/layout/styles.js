@@ -1,6 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { Link } from 'gatsby-plugin-intl'
 import {
+  SPACE_0_5,
   SPACE_1,
   SPACE_1_5,
   SPACE_2,
@@ -27,6 +28,12 @@ export const Footer = styled.footer`
   margin: ${SPACE_1_5}px;
 `
 
+export const MainTitleWrapper = styled.div`
+  ${mq.greaterThan('medium')`
+    position: relative;
+  `}
+`
+
 export const MainTitle = styled.h1`
   font-size: 60px;
   margin: 0 0 ${SPACE_4}px 0;
@@ -37,6 +44,28 @@ export const MainTitle = styled.h1`
   `}
 `
 
+const rotate = keyframes`
+  from {
+    transform: translate(-33%, -33%) rotate(30deg);
+  }
+
+  to {
+    transform: translate(-33%, -33%) rotate(390deg);
+  }
+`
+
+export const MainTitleImageWrapper = styled.div`
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  max-width: 200px;
+  min-width: 120px;
+  width: 20vw;
+  opacity: 0.2;
+  animation: ${rotate} 420s linear infinite;
+`
+
 export const MainTitleLink = styled(Link)`
   color: ${BLACK};
   :hover {
@@ -44,11 +73,28 @@ export const MainTitleLink = styled(Link)`
   }
 `
 
-export const BlogTitle = styled.h2`
-  font-size: 25px;
+export const BlogTitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `
 
-export const BlogTitleLink = MainTitleLink
+export const BlogTitleImageWrapper = styled.div`
+  width: 40px;
+  min-width: 40px;
+  margin-right: ${SPACE_0_5}px;
+  margin-left: -5px; /* align to left side visually */
+`
+
+export const BlogTitle = styled.h2`
+  font-size: 25px;
+  margin-bottom: ${SPACE_2}px;
+`
+
+export const BlogTitleLink = styled(MainTitleLink)`
+  display: flex;
+  align-items: center;
+  word-break: break-word;
+`
 
 export const LangWrapper = styled.div`
   display: flex;
