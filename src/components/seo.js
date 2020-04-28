@@ -56,7 +56,9 @@ const SEO = ({ lang, keywords, title, description, url }) => {
         },
         {
           property: `og:image`,
-          content: file.childImageSharp.fixed.src,
+          content: `${
+            file.childImageSharp.fixed.src
+          }?url=${url}&id=${Math.random()}`,
         },
         {
           property: `og:url`,
