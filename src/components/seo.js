@@ -11,7 +11,7 @@ const SEO = ({ lang, keywords, title, description, url }) => {
       query {
         file(relativePath: { eq: "images/globe-icon.png" }) {
           childImageSharp {
-            fixed(width: 600, height: 600) {
+            fixed(width: 512, height: 512) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -56,9 +56,7 @@ const SEO = ({ lang, keywords, title, description, url }) => {
         },
         {
           property: `og:image`,
-          content: `${
-            file.childImageSharp.fixed.src
-          }?url=${url}&id=${Math.random()}`,
+          content: file.childImageSharp.fixed.src,
         },
         {
           property: `og:url`,
@@ -83,6 +81,10 @@ const SEO = ({ lang, keywords, title, description, url }) => {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: file.childImageSharp.fixed.src,
         },
       ].concat(
         keywords.length > 0
