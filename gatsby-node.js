@@ -1,8 +1,8 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-const removeMarkdownFileEnding = path => path.replace(/index.(en|de)\/$/, '')
-const getLanguageFromPath = path => {
+const removeMarkdownFileEnding = (path) => path.replace(/index.(en|de)\/$/, '')
+const getLanguageFromPath = (path) => {
   const lang = path.match(/\.(de|en)\/$/)
   return lang ? lang[1] : ''
 }
@@ -36,7 +36,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+  const blogPost = path.resolve(`./src/templates/blog-posts/index.js`)
   return graphql(
     `
       {
@@ -59,7 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `
-  ).then(result => {
+  ).then((result) => {
     if (result.errors) {
       throw result.errors
     }
@@ -83,7 +83,7 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }, {})
 
-    Object.values(postsByLang).forEach(postsArray =>
+    Object.values(postsByLang).forEach((postsArray) =>
       postsArray.forEach((post, index) => {
         const previous =
           index === postsArray.length - 1 ? null : postsArray[index + 1].node

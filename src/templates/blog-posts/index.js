@@ -4,8 +4,11 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { Link, useIntl } from 'gatsby-plugin-intl'
 import { DiscussionEmbed } from 'disqus-react'
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
+import BuyMeACoffee from '../../components/buyMeACoffee'
+import SocialShare from '../../components/social-share'
+import { SupportArea } from './styles'
 
 const BlogPostTemplate = ({
   data: {
@@ -55,6 +58,11 @@ const BlogPostTemplate = ({
           )}
         </li>
       </ul>
+      <SupportArea>
+        <BuyMeACoffee />
+        <SocialShare url={location.href} title={post.frontmatter.title} />
+      </SupportArea>
+      <hr />
       <DiscussionEmbed
         shortname={disqusName}
         config={{
