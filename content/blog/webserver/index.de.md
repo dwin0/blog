@@ -70,6 +70,8 @@ Nachdem der Browser alles heruntergeladen hat, sieht die Seite wie folgt aus:
 
 ![Browserfenster, welches eine Webseite mit Titel und Bild anzeigt](./web-server-website.jpg)
 
+Den kompletten Code gibt es auf <a href="https://www.buymeacoffee.com/l/webserver" target="_blank">buymeacoffee.com</a>. Dabei unterstützt du gleichzeitig weitere Artikel. Danke!
+
 ---
 
 Hinweis: Die aufgeführten Regeln sind sehr vereinfacht. Das Vorgehen funktioniert so nicht, wenn eine Webseite viele CSS Dateien oder Bilder hat. Es gibt bessere Regeln, um Dateien auszuliefern.

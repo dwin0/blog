@@ -84,7 +84,7 @@ const SEO = ({ lang, keywords, title, description, url }) => {
         },
         {
           name: `twitter:image`,
-          content: file.childImageSharp.fixed.src,
+          content: file.childImageSharp.fixed.src, // TODO: not working
         },
       ].concat(
         keywords.length > 0

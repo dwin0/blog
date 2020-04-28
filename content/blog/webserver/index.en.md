@@ -70,6 +70,8 @@ After the browser has downloaded everything, the page looks like this:
 
 ![browser window, which displays a web page with a title and an image](./web-server-website.jpg)
 
+The complete code is available on <a href="https://www.buymeacoffee.com/l/webserver" target="_blank">buymeacoffee.com</a>. This supports me to write more articles. Thanks!
+
 ---
 
 Note: The listed rules are extremly simplified. The procedure does not work if a web page has many CSS files or images. There are better rules for delivering files.
