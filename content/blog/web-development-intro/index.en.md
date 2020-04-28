@@ -6,7 +6,7 @@ description: ''
 
 import { Link } from 'gatsby-plugin-intl'
 
-What happens if you enter a URL in the browser and it displays a web page?
+What happens if you enter a web address (<a href="https://developer.mozilla.org/en-US/docs/Glossary/URL" target="_blank">URL</a>) in the web browser and it displays a web page?
 
 First of all, two computers communicate. The own computer and the computer on which the website is stored. A website consists of several files and is sent from the computer on which they are stored to the computer that wants to display the website.
 

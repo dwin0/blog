@@ -6,7 +6,7 @@ description: ''
 
 import { Link } from 'gatsby'
 
-Was geschieht, wenn man eine URL im Browser eingibt und dieser anschliessend eine Webseite anzeigt?
+Was geschieht, wenn man eine Web-Adresse (<a href="https://developer.mozilla.org/de/docs/Glossary/URL" target="_blank">URL</a>) im Webbrowser eingibt und dieser anschliessend eine Webseite anzeigt?
 
 Zunächst kommunizieren dabei zwei Computer. Der eigene Rechner und der Computer auf dem die Webseite abgespeichert ist. Eine Webseite besteht nämlich aus mehrere Dateien und wird vom Computer auf dem diese gespeichert sind zum Computer der sie anzeigen möchte gesendet.
 
