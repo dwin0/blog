@@ -12,8 +12,9 @@ import {
   LangButton,
 } from './styles'
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, children }) => {
   const { locale: currentLanguage, formatMessage } = useIntl()
+  const blogTitle = formatMessage({ id: 'webDevelopmentBlog' })
   const homePaths = [
     `${__PATH_PREFIX__}/${currentLanguage}`,
     `${__PATH_PREFIX__}/${currentLanguage}/`,
@@ -43,11 +44,11 @@ const Layout = ({ location, title, children }) => {
           </LangWrapper>
           {homePaths.includes(location.pathname) ? (
             <MainTitle>
-              <MainTitleLink to="/">{title}</MainTitleLink>
+              <MainTitleLink to="/">{blogTitle}</MainTitleLink>
             </MainTitle>
           ) : (
             <BlogTitle>
-              <BlogTitleLink to="/">{title}</BlogTitleLink>
+              <BlogTitleLink to="/">{blogTitle}</BlogTitleLink>
             </BlogTitle>
           )}
         </header>

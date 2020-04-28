@@ -36,7 +36,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-posts/index.js`)
+  const blogPost = path.resolve(`./src/templates/blog-post/index.js`)
   return graphql(
     `
       {

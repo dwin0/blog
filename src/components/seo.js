@@ -2,35 +2,45 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import { useIntl } from 'gatsby-plugin-intl'
 
-function SEO({ description, lang, meta, keywords, title }) {
-  const { site } = useStaticQuery(
+const SEO = ({ lang, keywords, title, description, url }) => {
+  const intl = useIntl()
+  const { file } = useStaticQuery(
     graphql`
       query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
+        file(relativePath: { eq: "images/globe-icon.png" }) {
+          childImageSharp {
+            fixed(width: 600, height: 600) {
+              ...GatsbyImageSharpFixed
+            }
           }
         }
       }
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const blogTitle = intl.formatMessage({
+    id: 'webDevelopmentBlog',
+  })
+  const metaDescription =
+    description ||
+    intl.formatMessage({
+      id: 'blogDescription',
+    })
 
+  // https://stackoverflow.com/questions/19778620/provide-an-image-for-whatsapp-link-sharing
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${blogTitle}`}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: metaDescription.substr(0, 150),
         },
         {
           property: `og:title`,
@@ -38,19 +48,31 @@ function SEO({ description, lang, meta, keywords, title }) {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: metaDescription.substr(0, 65),
         },
         {
           property: `og:type`,
           content: `website`,
         },
         {
-          name: `twitter:card`,
-          content: `summary`,
+          property: `og:image`,
+          content: file.childImageSharp.fixed.src,
         },
         {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          property: `og:url`,
+          content: url,
+        },
+        {
+          property: `og:locale`,
+          content: intl.locale,
+        },
+        {
+          property: `og:locale:alternate`,
+          content: intl.locale === 'de' ? 'en' : 'de',
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
         },
         {
           name: `twitter:title`,
@@ -60,33 +82,32 @@ function SEO({ description, lang, meta, keywords, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
-      ]
-        .concat(
-          keywords.length > 0
-            ? {
-                name: `keywords`,
-                content: keywords.join(`, `),
-              }
-            : []
-        )
-        .concat(meta)}
+      ].concat(
+        keywords.length > 0
+          ? {
+              name: `keywords`, // TODO:
+              content: keywords.join(`, `),
+            }
+          : []
+      )}
     />
   )
 }
 
 SEO.defaultProps = {
   lang: `en`,
-  meta: [],
   keywords: [],
+  title: ``,
   description: ``,
+  url: ``,
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  url: PropTypes.string.isRequired,
 }
 
 export default SEO

@@ -1,8 +1,5 @@
 module.exports = {
   siteMetadata: {
-    title: `Web Development Blog`,
-    description: `A blog to explain web development concepts the simple way`,
-    author: `David Windler`,
     siteUrl: `https://web-developer-blog.io/`,
     disqusName: 'web-development-blog',
   },
@@ -11,7 +8,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-feed-mdx`,
+    // `gatsby-plugin-feed-mdx`, TODO:
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -59,14 +56,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Web Developer Blog`,
+        short_name: `Web Dev Blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        // edit below
-        icon: `content/assets/gatsby-icon.png`,
+        // https://www.iconfinder.com/search/?q=web&price=free
+        icon: `content/assets/images/globe-icon.png`,
       },
     },
     {

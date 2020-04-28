@@ -14,7 +14,7 @@ const BlogPostTemplate = ({
   data: {
     mdx: post,
     site: {
-      siteMetadata: { title: siteTitle, siteUrl, disqusName },
+      siteMetadata: { siteUrl, disqusName },
     },
   },
   pageContext: { previous, next, slug },
@@ -23,11 +23,12 @@ const BlogPostTemplate = ({
   const intl = useIntl()
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location}>
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         lang={intl.locale}
+        url={location.href}
       />
       <h1>{post.frontmatter.title}</h1>
       <p>{post.frontmatter.date}</p>
@@ -81,7 +82,6 @@ export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
       siteMetadata {
-        title
         siteUrl
         disqusName
       }

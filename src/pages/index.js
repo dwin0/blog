@@ -9,9 +9,6 @@ import { About } from '../components/about'
 
 const Blog = ({
   data: {
-    site: {
-      siteMetadata: { title: siteTitle },
-    },
     allMdx: { edges: posts },
   },
   location,
@@ -19,8 +16,12 @@ const Blog = ({
   const intl = useIntl()
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title={intl.formatMessage({ id: 'allPosts' })} lang={intl.locale} />
+    <Layout location={location}>
+      <SEO
+        title={intl.formatMessage({ id: 'home' })}
+        lang={intl.locale}
+        url={location.href}
+      />
       <About />
       <div>
         {posts.map(
@@ -60,11 +61,6 @@ export default Blog
 
 export const pageQuery = graphql`
   query($language: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMdx(
       filter: { fields: { language: { eq: $language } } }
       sort: { fields: [frontmatter___date], order: DESC }
