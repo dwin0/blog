@@ -70,7 +70,7 @@ Nachdem der Browser alles heruntergeladen hat, sieht die Seite wie folgt aus:
 
 ![Browserfenster, welches eine Webseite mit Titel und Bild anzeigt](./web-server-website.jpg)
 
-Den kompletten Code gibt es auf <a href="https://www.buymeacoffee.com/l/webserver" target="_blank">buymeacoffee.com</a>. Dabei unterstützt du gleichzeitig weitere Artikel. Danke!
+Den kompletten Code gibt es auf <a href="https://www.buymeacoffee.com/l/webserver" target="_blank" rel="noopener noreferrer">buymeacoffee.com</a>. Dabei unterstützt du gleichzeitig weitere Artikel. Danke!
 
 ---
 
