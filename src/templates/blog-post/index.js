@@ -45,18 +45,30 @@ const BlogPostTemplate = ({
         }}
       >
         <li>
-          {previous && (
-            <Link to={`/blog${previous.fields.blogPath}`} rel="prev">
-              ← {previous.frontmatter.title}
+          {next && (
+            <Link to={`/blog${next.fields.blogPath}`} rel="next">
+              ← {next.frontmatter.title}
             </Link>
           )}
         </li>
-        <li>
-          {next && (
-            <Link to={`/blog${next.fields.blogPath}`} rel="next">
-              {next.frontmatter.title} →
+        <li style={{ marginLeft: 'auto' }}>
+          {previous && (
+            <Link to={`/blog${previous.fields.blogPath}`} rel="prev">
+              {previous.frontmatter.title} →
             </Link>
           )}
+        </li>
+      </ul>
+      <ul
+        style={{
+          display: `flex`,
+          justifyContent: `center`,
+          listStyle: `none`,
+          padding: 0,
+        }}
+      >
+        <li>
+          <Link to={`/`}>{intl.formatMessage({ id: 'backToHome' })}</Link>
         </li>
       </ul>
       <SupportArea>
