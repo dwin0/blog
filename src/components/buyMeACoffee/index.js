@@ -2,7 +2,7 @@ import React from 'react'
 import { useIntl } from 'gatsby-plugin-intl'
 import { BmcButton, CoffeeImage, Text } from './styles'
 
-const BuyMeACoffee = () => {
+const BuyMeACoffee = ({ schoolPage }) => {
   const intl = useIntl()
 
   return (
@@ -15,7 +15,11 @@ const BuyMeACoffee = () => {
         src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg"
         alt={intl.formatMessage({ id: 'cupOfCoffee' })}
       />
-      <Text>{intl.formatMessage({ id: 'buyMeACoffee' })}</Text>
+      <Text>
+        {intl.formatMessage({
+          id: schoolPage ? 'buyMeACoffeeSchool' : 'buyMeACoffee',
+        })}
+      </Text>
     </BmcButton>
   )
 }

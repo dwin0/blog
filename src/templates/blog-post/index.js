@@ -6,9 +6,7 @@ import { DiscussionEmbed } from 'disqus-react'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import BuyMeACoffee from '../../components/buyMeACoffee'
-import SocialShare from '../../components/social-share'
-import { SupportArea } from './styles'
+import SupportArea from '../../components/support-area'
 
 const BlogPostTemplate = ({
   data: {
@@ -71,10 +69,7 @@ const BlogPostTemplate = ({
           <Link to={`/`}>{intl.formatMessage({ id: 'backToHome' })}</Link>
         </li>
       </ul>
-      <SupportArea>
-        <BuyMeACoffee />
-        <SocialShare url={location.href} title={post.frontmatter.title} />
-      </SupportArea>
+      <SupportArea url={location.href} title={post.frontmatter.title} />
       <hr />
       <DiscussionEmbed
         shortname={disqusName}

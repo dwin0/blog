@@ -4,7 +4,13 @@ import { useIntl, Link } from 'gatsby-plugin-intl'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { BlogEntry, PublishDate, BlogTitle, BlogPreview } from '../pages-styles'
+import {
+  BlogEntry,
+  PublishDate,
+  BlogTitle,
+  BlogPreview,
+  TeachingMaterialLink,
+} from '../pages-styles'
 import { About } from '../components/about'
 
 const Blog = ({
@@ -59,6 +65,11 @@ const Blog = ({
             }
           )}
       </div>
+      {intl.locale === 'de' && (
+        <TeachingMaterialLink to="/school">
+          {intl.formatMessage({ id: 'teachingMaterial' })}
+        </TeachingMaterialLink>
+      )}
     </Layout>
   )
 }
