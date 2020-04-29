@@ -10,12 +10,12 @@ const ContactForm = () => {
     <Form
       name="contact"
       method="POST"
+      action="/"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       data-netlify-recaptcha="true"
     >
       <input type="hidden" name="bot-field" />
-      <input type="hidden" name="form-name" value="teaching-material-contact" />
       <FieldWrapper>
         <label htmlFor="name">{formatMessage({ id: 'name' })}</label>
         <Input type="text" name="name" id="name" required />
