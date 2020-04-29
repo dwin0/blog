@@ -37,6 +37,8 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogPost = path.resolve(`./src/templates/blog-post/index.js`)
+
+  // title is needed for next/prev links
   return graphql(
     `
       {
@@ -52,6 +54,7 @@ exports.createPages = ({ graphql, actions }) => {
                 language
               }
               frontmatter {
+                draft
                 title
               }
             }
@@ -66,8 +69,14 @@ exports.createPages = ({ graphql, actions }) => {
 
     const posts = result.data.allMdx.edges
 
+    const postsToRender = posts.filter((post) =>
+      process.env.NODE_ENV === `production`
+        ? !post.node.frontmatter.draft
+        : true
+    )
+
     // needed to correctly link to next and previous
-    const postsByLang = posts.reduce((acc, post) => {
+    const postsByLang = postsToRender.reduce((acc, post) => {
       const postLang = post.node.fields.language
 
       if (acc[postLang]) {

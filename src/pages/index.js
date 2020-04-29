@@ -24,34 +24,40 @@ const Blog = ({
       />
       <About />
       <div>
-        {posts.map(
-          ({
-            node: {
-              frontmatter: { title, description, date },
-              fields: { blogPath },
-              excerpt,
-            },
-          }) => {
-            const link = `/blog${blogPath}`
+        {posts
+          .filter(({ node }) =>
+            process.env.NODE_ENV === `production`
+              ? !node.frontmatter.draft
+              : true
+          )
+          .map(
+            ({
+              node: {
+                frontmatter: { title, description, date },
+                fields: { blogPath },
+                excerpt,
+              },
+            }) => {
+              const link = `/blog${blogPath}`
 
-            return (
-              <BlogEntry key={blogPath}>
-                <BlogTitle>
-                  <Link to={link}>{title}</Link>
-                </BlogTitle>
-                <PublishDate>{date}</PublishDate>
-                <BlogPreview
-                  dangerouslySetInnerHTML={{
-                    __html: description || excerpt,
-                  }}
-                />
-                <Link to={link}>
-                  {intl.formatMessage({ id: 'readMore' })}&nbsp;→
-                </Link>
-              </BlogEntry>
-            )
-          }
-        )}
+              return (
+                <BlogEntry key={blogPath}>
+                  <BlogTitle>
+                    <Link to={link}>{title}</Link>
+                  </BlogTitle>
+                  <PublishDate>{date}</PublishDate>
+                  <BlogPreview
+                    dangerouslySetInnerHTML={{
+                      __html: description || excerpt,
+                    }}
+                  />
+                  <Link to={link}>
+                    {intl.formatMessage({ id: 'readMore' })}&nbsp;→
+                  </Link>
+                </BlogEntry>
+              )
+            }
+          )}
       </div>
     </Layout>
   )
@@ -75,6 +81,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            draft
           }
         }
       }
