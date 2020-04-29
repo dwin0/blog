@@ -5,9 +5,15 @@
   "builtWith": "Built with",
   "buyMeACoffee": "Buy me a coffee",
   "buyMeACoffeeSchool": "More materials? Support me here",
+  "contactMeText": "Feedback is always welcome. Please contact me using the following form:",
   "cupOfCoffee": "Cup of coffee",
+  "email": "Email address",
   "home": "Home",
+  "improvements": "Improvements",
+  "message": "Message",
+  "name": "Name",
   "readMore": "Read more",
+  "sendForm": "Send",
   "teachingMaterial": "Teaching material",
   "webDevelopmentBlog": "Web Development Blog"
 }

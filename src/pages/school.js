@@ -6,6 +6,7 @@ import Image from 'gatsby-image'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import SupportArea from '../components/support-area'
+import ContactForm from '../components/contact-form'
 import { List, MaterialItem, PreviewImageLink } from '../pages-styles/school'
 
 const School = ({ data: { file }, location }) => {
@@ -51,6 +52,14 @@ const School = ({ data: { file }, location }) => {
       <br />
 
       <SupportArea schoolPage url={location.href} title={title} />
+
+      <hr />
+      <br />
+
+      <h2>{intl.formatMessage({ id: 'improvements' })}?</h2>
+      <p>{intl.formatMessage({ id: 'contactMeText' })}</p>
+
+      <ContactForm />
     </Layout>
   )
 }
