@@ -114,7 +114,7 @@ const ContactForm = () => {
       {submitError && <SubmitError>{submitError}</SubmitError>}
       <ButtonWrapper>
         <SubmitOKButton type="button" isSubmitted={isSubmitted}>
-          OK
+          {formatMessage({ id: 'sentForm' })} &#10004;
         </SubmitOKButton>
         <SubmitButton
           type="submit"

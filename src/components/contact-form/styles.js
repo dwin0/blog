@@ -65,7 +65,8 @@ const buttonStyle = css`
   border: 0;
   padding: 10px 20px;
   width: 200px;
-  transition: transform 0.5s;
+  transition: transform 0.75s;
+  transition-delay: 0.25s;
 
   &:active {
     transform: translate(2px, 2px);
