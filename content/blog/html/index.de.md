@@ -2,7 +2,6 @@
 title: HTML
 date: '2020-05-03'
 description: ''
-draft: true
 ---
 
 import { Link } from 'gatsby'
@@ -56,9 +55,9 @@ Beispiel:
 
 Obwohl der gleiche Text verwendet wird, haben die Elemente eine völlig unterschiedliche Bedeutung. Im ersten Beispiel ist "landscape" der Haupttitel der Seite, im zweiten ein Zitat.
 
-### Wieso ist diese Unterscheidung wichtig? Mit CSS kann ich das Aussehen des Zitates auch so verändern, dass es wie ein Titel aussieht?
+### Wieso ist diese Unterscheidung wichtig? Mit CSS kann ich das Aussehen des Zitates auch so verändern, dass es wie ein Titel aussieht.
 
-Das ist möglich, jedoch die falsche Vorgehensweise. Nicht jeder Besucher sieht unserer Webseite mit den Augen. Menschen, die nur wenig oder gar nichts sehen, verwenden sogenannte <a href="https://www.itwissen.info/Screenreader-screenreader.html" target="_blank" rel="noopener noreferrer">Screen-Reader</a>. Diese Software ist darauf angewiesen, dass Texte korrekt gekennzeichnet sind.<br />
+Das ist möglich, jedoch die falsche Vorgehensweise. Nicht jeder Besucher sieht unserer Webseite mit den Augen. Menschen, die nur wenig oder gar nichts sehen, verwenden sogenannte <a href="https://www.itwissen.info/Screenreader-screenreader.html" target="_blank" rel="noopener noreferrer">Screenreader</a>. Diese Software ist darauf angewiesen, dass Texte korrekt gekennzeichnet sind.<br />
 Auch die Software von Google, welche unsere Seite bewertet und in den Suchergebnissen auflistet, richtet sich nach diesen Tags.
 
 Eine vollständige Liste der Tags kann auf der <a href="https://developer.mozilla.org/de/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer">MDN-Seite über HTML Elemente</a> gefunden werden.

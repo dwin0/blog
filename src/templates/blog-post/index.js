@@ -29,7 +29,13 @@ const BlogPostTemplate = ({
         url={location.href}
       />
       <h1>{post.frontmatter.title}</h1>
-      <p>{post.frontmatter.date}</p>
+      <p>
+        {intl.formatDate(post.frontmatter.date, {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
+      </p>
       <MDXRenderer>{post.body}</MDXRenderer>
       <hr />
 

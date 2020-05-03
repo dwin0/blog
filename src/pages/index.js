@@ -51,7 +51,13 @@ const Blog = ({
                   <BlogTitle>
                     <Link to={link}>{title}</Link>
                   </BlogTitle>
-                  <PublishDate>{date}</PublishDate>
+                  <PublishDate>
+                    {intl.formatDate(date, {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </PublishDate>
                   <BlogPreview
                     dangerouslySetInnerHTML={{
                       __html: description || excerpt,
