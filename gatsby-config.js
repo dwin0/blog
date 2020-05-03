@@ -54,6 +54,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        exclude: [`/en/404/`, `/de/404/`, `/en/404.html`, `/de/404.html`],
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Web Developer Blog`,
