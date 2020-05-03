@@ -15,11 +15,11 @@ Die Webseite besteht aus einer <a href="https://developer.mozilla.org/de/docs/We
 
 ## HTML Struktur
 
-HTML besteht aus vorgegebenen Elementen, den sogennten "Tags". Diese legen die Art des Inhalts fest. Eine Zeile besteht jeweils aus:
+HTML besteht aus vorgegebenen Elementen, den sogenannten "Tags". Diese legen die Art des Inhalts fest. Eine Zeile besteht jeweils aus:
 
 - Öffnendem Tag `<tag>`
 - Inhalt
-- Schliessender Tag `</tag>`
+- Schliessendem Tag `</tag>`
 
 ```html
 <tag>Inhalt</tag>
@@ -59,9 +59,9 @@ Obwohl der gleiche Text verwendet wird, haben die Elemente eine völlig untersch
 ### Wieso ist diese Unterscheidung wichtig? Mit CSS kann ich das Aussehen des Zitates auch so verändern, dass es wie ein Titel aussieht?
 
 Das ist möglich, jedoch die falsche Vorgehensweise. Nicht jeder Besucher sieht unserer Webseite mit den Augen. Menschen, die nur wenig oder gar nichts sehen, verwenden sogenannte <a href="https://www.itwissen.info/Screenreader-screenreader.html" target="_blank" rel="noopener noreferrer">Screen-Reader</a>. Diese Software ist darauf angewiesen, dass Texte korrekt gekennzeichnet sind.<br />
-Auch Google, welche unsere Seite in den Suchergebnissen auflistet, richtet sich nach diesen Tags.
+Auch die Software von Google, welche unsere Seite bewertet und in den Suchergebnissen auflistet, richtet sich nach diesen Tags.
 
-Eine vollständige Liste der Tags kann auf der <a href="https://developer.mozilla.org/de/docs/Web/HTML/Element">MDN-Seite über HTML Elemente</a> gefunden werden.
+Eine vollständige Liste der Tags kann auf der <a href="https://developer.mozilla.org/de/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer">MDN-Seite über HTML Elemente</a> gefunden werden.
 
 Nachdem die Elemente von HTML vorgestellt wurden, nun ein Blick auf den Aufbau einer HTML Datei.
 
@@ -72,11 +72,12 @@ Es gibt zwei Hauptbereiche:
 - **head**: Enthält Informationen, die für den Browser gedacht sind.<br />
   Beispiele:
   - title: Text, welcher oben im Browser Tab angezeigt wird
-  - link: Verweis auf eine andere Datei, welche der Browser laden soll. Mehr dazu im <Link to='/de/blog/css'>Artikel über CSS</Link>.
+  - link: Verweis auf eine andere Datei, welche der Browser laden soll. Mehr Informationen dazu wird es im Artikel über CSS geben.
 - **body**: Informationen aus diesem Bereich werden im Browserfenster angezeigt.<br />
   Beispiele:
   - h1: Haupttitel der Seite
   - img: Bild
+  - p: Textabschnitt
 
 Zusammengesetzt sieht das so aus:
 
@@ -89,8 +90,14 @@ Zusammengesetzt sieht das so aus:
   <body>
     <h1>First Website</h1>
     <img src="landscape.jpg" />
+    <p>Photo by Meritt Thomas on Unsplash</p>
   </body>
 </html>
 ```
 
-Nun haben wir die Struktur der am Anfang gezeigten Webseite. Der <Link to='/de/blog/css'>nächste Artikel</Link> geht auf das Aussehen der Seite mit CSS ein.
+Nun haben wir die Struktur der am Anfang gezeigten Webseite. Der nächste Artikel wird auf das Aussehen mit CSS eingehen.
+
+Dieser Artikel stellte lediglich die groben Konzepte von HTML dar, um den Einstieg zu erleichtern. Um die Sprache komplett zu lernen, empfehle ich folgende Ressourcen:
+
+- Online gratis: <a href="https://www.learn-html.org/" target="_blank">learn-html.org</a>
+- Buch für Beginner: <a href="https://amzn.to/2W6FX5Y" target="_blank">HTML & CSS: Erfolgreich Websites gestalten und programmieren</a>
