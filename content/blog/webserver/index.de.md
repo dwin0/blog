@@ -46,8 +46,8 @@ app.get('/styles.css', function (request, response) {
   response.sendFile(__dirname + '/styles.css')
 })
 
-app.get('/meritt-thomas.jpg', function (request, response) {
-  response.sendFile(__dirname + '/meritt-thomas.jpg')
+app.get('/landscape.jpg', function (request, response) {
+  response.sendFile(__dirname + '/landscape.jpg')
 })
 ```
 
@@ -58,7 +58,7 @@ ProjektOrdner
 │-- server.js (Webserver Programm mit den oben gezeigten Regeln)
 │-- index.html
 │-- styles.css
-│-- meritt-thomas.jpg
+│-- landscape.jpg
 ```
 
 - `__dirname` ist dabei der Ordnerpfad zu ProjektOrdner (zum Beispiel: /Users/me/Documents/ProjektOrdner)
