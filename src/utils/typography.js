@@ -9,6 +9,10 @@ Wordpress2016.overrideStyles = () => ({
   'h1, h2, h3': {
     fontFamily: 'Montserrat, sans-serif',
   },
+  h2: {
+    marginTop: '4rem',
+    marginBottom: '1.25rem',
+  },
   a: {
     textDecoration: 'none',
     color: LIGHT_BLUE,
