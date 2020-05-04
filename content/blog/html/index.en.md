@@ -6,11 +6,7 @@ description: ''
 
 import { Link } from 'gatsby'
 
-The web server in the <Link to='/en/blog/webserver'>last article</Link> delivered the following web page in the end:
-
-![Browser window, which displays a web page with a title and an image](./web-server-website.jpg)
-
-The website consists of an <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a> file, a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a> file and an image. This article discusses the concepts of HTML.
+The main components of a website are <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a> files, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a> files and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">JavaScript</a> files. This article discusses the concepts of HTML.
 
 ## HTML structure
 
@@ -94,7 +90,10 @@ Altogether it looks like this:
 </html>
 ```
 
-Now we have the structure of the website shown at the beginning of this article. The next article will go into the appearance of the site with CSS.
+This corresponds to the HTML code of the web page that was delivered in the article about <Link to='/en/blog/webserver'>web servers</Link>. The links have been omitted to simplify the example code.<br />
+The next article will discuss the appearance of the same page with CSS, so that the page looks like this in the end:
+
+![Browser window, which displays a web page with a title and an image](./web-server-website.jpg)
 
 This article only presented the rough concepts of HTML to make it easier to get started. To learn the language completely, I recommend the following resources:
 

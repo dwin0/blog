@@ -6,11 +6,7 @@ description: ''
 
 import { Link } from 'gatsby'
 
-Der Webserver im <Link to='/de/blog/webserver'>letzten Artikel</Link> lieferte am Ende folgende Webseite aus:
-
-![Browserfenster, welches eine Webseite mit Titel und Bild anzeigt](./web-server-website.jpg)
-
-Die Webseite besteht aus einer <a href="https://developer.mozilla.org/de/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a> Datei, einer <a href="https://developer.mozilla.org/de/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a> Datei und einem Bild. Dieser Artikel geht auf die Konzepte von HTML ein.
+Die Hauptbestandteile einer Webseite sind <a href="https://developer.mozilla.org/de/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a> Dateien, <a href="https://developer.mozilla.org/de/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a> Dateien und <a href="https://developer.mozilla.org/de/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">JavaScript</a> Dateien. Dieser Artikel geht auf die Konzepte von HTML ein.
 
 ## HTML Struktur
 
@@ -94,7 +90,10 @@ Zusammengesetzt sieht das so aus:
 </html>
 ```
 
-Nun haben wir die Struktur der am Anfang gezeigten Webseite. Der nächste Artikel wird auf das Aussehen mit CSS eingehen.
+Dies entspricht dem HTML Code der Webseite, welche im Artikel über <Link to='/de/blog/webserver'>Webserver</Link> ausgeliefert wurde. Die Links wurden zur Vereinfachung des Beispielcodes weggelassen.<br />
+Der nächste Artikel wird auf das Aussehen derselben Seite mit CSS eingehen, sodass die Seite am Ende wie folgt aussieht:
+
+![Browserfenster, welches eine Webseite mit Titel und Bild anzeigt](./web-server-website.jpg)
 
 Dieser Artikel stellte lediglich die groben Konzepte von HTML dar, um den Einstieg zu erleichtern. Um die Sprache komplett zu lernen, empfehle ich folgende Ressourcen:
 
