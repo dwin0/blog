@@ -21,7 +21,7 @@ const SEO = ({ lang, keywords, title, description, url }) => {
   )
 
   const blogTitle = intl.formatMessage({
-    id: 'webDevelopmentBlog',
+    id: 'webDeveloperBlog',
   })
   const metaDescription =
     description ||

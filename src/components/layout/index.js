@@ -19,7 +19,7 @@ import {
 
 const Layout = ({ location, children }) => {
   const { locale: currentLanguage, formatMessage } = useIntl()
-  const blogTitle = formatMessage({ id: 'webDevelopmentBlog' })
+  const blogTitle = formatMessage({ id: 'webDeveloperBlog' })
   const homePaths = [
     `${__PATH_PREFIX__}/${currentLanguage}`,
     `${__PATH_PREFIX__}/${currentLanguage}/`,
