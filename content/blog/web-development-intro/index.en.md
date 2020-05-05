@@ -2,6 +2,13 @@
 title: Web development introduction
 date: '2020-04-23'
 description: ''
+keywords:
+  - web development
+  - what is web development
+  - intro web development
+  - html
+  - css
+  - javascript
 ---
 
 import { Link } from 'gatsby-plugin-intl'

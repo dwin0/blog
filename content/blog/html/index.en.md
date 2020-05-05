@@ -2,6 +2,12 @@
 title: HTML
 date: '2020-05-03'
 description: ''
+keywords:
+  - html
+  - html structure
+  - html purpose
+  - html head body
+  - website
 ---
 
 import { Link } from 'gatsby'

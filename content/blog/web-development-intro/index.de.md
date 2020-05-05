@@ -2,6 +2,13 @@
 title: Einführung Webentwicklung
 date: '2020-04-23'
 description: ''
+keywords:
+  - webentwicklung
+  - was ist webentwicklung
+  - einführung webentwicklung
+  - html
+  - css
+  - javascript
 ---
 
 import { Link } from 'gatsby'

@@ -27,6 +27,7 @@ const BlogPostTemplate = ({
         description={post.frontmatter.description || post.excerpt}
         lang={intl.locale}
         url={location.href}
+        keywords={post.frontmatter.keywords}
       />
       <h1>{post.frontmatter.title}</h1>
       <p>
@@ -107,6 +108,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        keywords
       }
     }
   }

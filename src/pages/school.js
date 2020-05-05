@@ -15,7 +15,12 @@ const School = ({ data: { file }, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title={title} lang={intl.locale} url={location.href} />
+      <SEO
+        title={title}
+        lang={intl.locale}
+        url={location.href}
+        keywords={intl.formatMessage({ id: 'keywordsSchoolPage' }).split(', ')}
+      />
       <h1>{title}</h1>
 
       {intl.locale === 'de' ? (

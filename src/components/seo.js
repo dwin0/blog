@@ -87,10 +87,14 @@ const SEO = ({ lang, keywords, title, description, url }) => {
           content: file.childImageSharp.fixed.src, // TODO: not working
         },
       ].concat(
-        keywords.length > 0
+        keywords && keywords.length > 0
           ? {
-              name: `keywords`, // TODO:
-              content: keywords.join(`, `),
+              name: `keywords`,
+              content:
+                keywords.join(`, `) +
+                `, ${intl.formatMessage({
+                  id: 'keywordsEachSite',
+                })}`,
             }
           : []
       )}

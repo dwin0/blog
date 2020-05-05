@@ -2,6 +2,11 @@
 title: Webserver
 date: '2020-04-25'
 description: ''
+keywords:
+  - webserver
+  - was ist ein webserver
+  - hosting
+  - webseite
 ---
 
 Ruft man eine Webseite auf, so wird diese von einem Webserver ausgeliefert. Was ist aber eigentlich ein Webserver?

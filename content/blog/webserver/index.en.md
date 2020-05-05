@@ -2,6 +2,11 @@
 title: Web server
 date: '2020-04-25'
 description: ''
+keywords:
+  - web server
+  - what is a web server
+  - hosting
+  - web site
 ---
 
 If you visit a website, it is delivered by a web server. But what exactly is a web server?

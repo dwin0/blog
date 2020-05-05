@@ -27,6 +27,7 @@ const Blog = ({
         title={intl.formatMessage({ id: 'home' })}
         lang={intl.locale}
         url={location.href}
+        keywords={intl.formatMessage({ id: 'keywordsHomePage' }).split(', ')}
       />
       <About />
       <div>
