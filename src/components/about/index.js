@@ -25,6 +25,7 @@ export const About = () => {
             href="https://twitter.com/WebDeveloperBl1"
             target="_blank"
             rel="noopener noreferrer"
+            style={{ whiteSpace: 'nowrap' }}
           >
             &nbsp;
             <TwitterIcon size={20} round />
