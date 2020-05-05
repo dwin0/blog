@@ -4,6 +4,7 @@ date: '2020-05-03'
 description: ''
 keywords:
   - html
+  - hypertext markup language
   - html structure
   - html purpose
   - html head body
@@ -13,6 +14,10 @@ keywords:
 import { Link } from 'gatsby'
 
 The main components of a website are <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a> files, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a> files and <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">JavaScript</a> files. This article discusses the concepts of HTML.
+
+## Name
+
+HTML is the abbreviation for Hypertext Markup Language. Hypertext is text that is connected to other text using links. This is very typical for websites. Markup Language assigns a certain meaning to a word or text. More about this further down.
 
 ## HTML structure
 

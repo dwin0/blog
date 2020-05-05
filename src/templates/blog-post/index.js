@@ -49,14 +49,14 @@ const BlogPostTemplate = ({
           padding: 0,
         }}
       >
-        <li>
+        <li style={{ paddingRight: 15 }}>
           {next && (
             <Link to={`/blog${next.fields.blogPath}`} rel="next">
               ← {next.frontmatter.title}
             </Link>
           )}
         </li>
-        <li style={{ marginLeft: 'auto' }}>
+        <li style={{ paddingLeft: 15, marginLeft: 'auto' }}>
           {previous && (
             <Link to={`/blog${previous.fields.blogPath}`} rel="prev">
               {previous.frontmatter.title} →

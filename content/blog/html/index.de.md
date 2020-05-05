@@ -4,6 +4,7 @@ date: '2020-05-03'
 description: ''
 keywords:
   - html
+  - hypertext markup language
   - html struktur
   - html zweck
   - html head body
@@ -13,6 +14,10 @@ keywords:
 import { Link } from 'gatsby'
 
 Die Hauptbestandteile einer Webseite sind <a href="https://developer.mozilla.org/de/docs/Web/HTML" target="_blank" rel="noopener noreferrer">HTML</a> Dateien, <a href="https://developer.mozilla.org/de/docs/Web/CSS" target="_blank" rel="noopener noreferrer">CSS</a> Dateien und <a href="https://developer.mozilla.org/de/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">JavaScript</a> Dateien. Dieser Artikel geht auf die Konzepte von HTML ein.
+
+## Name
+
+HTML ist die Abkürzung für Hypertext Markup Language. Hypertext ist Text, welcher durch Links zu anderen Texten verbunden ist. Dies ist typisch für Webseiten. Markup Language, zu deutsch "Auszeichnungssprache", weist einem Wort oder Text eine bestimmte Bedeutung zu. Mehr dazu weiter unten.
 
 ## HTML Struktur
 
