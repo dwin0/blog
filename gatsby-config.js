@@ -47,10 +47,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `G-BK13K2NK9M`,
-        anonymize: true,
+        trackingIds: ['G-BK13K2NK9M'],
+        gtagConfig: {
+          anonymize_ip: true,
+        },
       },
     },
     {
